@@ -1,0 +1,68 @@
+$tag-background-color: #4779B1;
+
+.tags {
+  list-style: none;
+}
+
+.tags li {
+    display: inline-block;
+}
+
+.tag {
+  background: $tag-background-color;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  color: #fff;
+  display: inline-block;
+  font-family: 'Muli', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 24px;
+  margin: 0 16px 8px 0;
+  padding: 0 10px 0 12px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  text-transform: uppercase;
+}
+
+.tag:visited {
+  color: #fff;
+}
+
+.tag:hover {
+  background: #779CDC;
+  color: #fff;
+  text-decoration: none;
+}
+
+.tag:hover:before {
+  border-color: transparent #779CDC transparent transparent;
+}
+
+.tag:before {
+  border-color: transparent $tag-background-color transparent transparent;
+  border-style: solid;
+  border-width: 12px 12px 12px 0;
+  content: "";
+  height: 0;
+  left: -12px;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+.tag:after {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: -1px -1px 2px rgba(0,0,0,0.4);
+  content: "";
+  float: left;
+  height: 5px;
+  left: 1px;
+  position: absolute;
+  top: 10px;
+  width: 5px;
+}
