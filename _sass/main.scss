@@ -3,16 +3,17 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+$base-font-family: 'PT Sans', sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$text-color:       #eee;
+$background-color: #2f2f2f;
+$brand-color:      #87AFEE;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);

@@ -17,14 +17,15 @@ green     #859900  operators, other keywords
 */
 
 .highlight code, .highlight pre {
-  background: #002b36;
+  background: transparent;
   border-radius: 2px;
   overflow-x: auto;
   border: 0px;
   margin: 0px;
 }
 .highlight {
-  border: 1px solid #2D6472;
+  background: rgba(0, 0, 0, 0.298039);
+  border: 1px solid #353535;
   border-radius: 3px;
   color: #93a1a1
 }

@@ -2,7 +2,6 @@
  * Site header
  */
 .site-header {
-    border-bottom: 1px solid $grey-color-light;
     border-top: 5px solid $grey-color-dark;
     min-height: 56px;
 
@@ -10,8 +9,16 @@
     position: relative;
 }
 
+.site-header .wrapper {
+  border-bottom: 1px solid #121212;
+  box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700);
+
 .site-title {
     float: left;
+    font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 26px;
     letter-spacing: -1px;
     line-height: 56px;
@@ -19,7 +26,7 @@
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: #59A1E5;
     }
 }
 
@@ -48,8 +55,12 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+}
+
+.site-footer .wrapper {
+    border-top: 1px solid #121212;
+    box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0 inset;
 }
 
 .footer-heading {
@@ -148,6 +159,7 @@
 }
 
 .post-title {
+    font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 42px;
     letter-spacing: -1px;
     line-height: 1;
@@ -155,6 +167,11 @@
     @include media-query($on-laptop) {
         font-size: 36px;
     }
+}
+
+.highlight {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .post-content {

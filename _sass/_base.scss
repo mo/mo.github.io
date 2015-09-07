@@ -126,8 +126,8 @@ blockquote {
  */
 pre,
 code {
-    background-color: #eef;
-    border: 1px solid $grey-color-light;
+    background-color: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
     font-size: 15px;
 }
