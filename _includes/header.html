@@ -4,6 +4,18 @@
 
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
+    <form class="searchform" onsubmit="event.preventDefault();submitSearch()">
+      <input type="text" id="searchQuery" placeholder="Search">
+      <input type="hidden" id="baseUrl" value="{{site.url}}{{site.baseurl}}">
+    </form>
+    <script>
+    function submitSearch() {
+      var query = document.getElementById("searchQuery").value;
+      var baseUrl = document.getElementById("baseUrl").value;
+      window.location = "http://google.com/search?q=site:" + baseUrl + " " + query;
+    }
+    </script>
+
     <nav class="site-nav">
       <a href="#" class="menu-icon">
         <svg viewBox="0 0 18 15">
