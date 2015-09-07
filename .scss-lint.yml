@@ -4,7 +4,7 @@ exclude:
   # will not process it at all). Therefore we disable linting for the main
   # scss file (css/all.scss) with the intention of keeping it to a minimal
   # (ideally it should be kept as front matter + a single import permanently).
-  - 'css/all.scss'
+  - 'assets-layout/all.scss'
   - '_sass/syntax-highlighting-solarized-dark.scss'
 
 linters:
