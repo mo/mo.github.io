@@ -1,0 +1,51 @@
+exclude:
+  # scss-lint hits syntax error for files that contain jekyll "front matter"
+  # (and jekyll requires the main scss to have front matter, otherwise jekyll
+  # will not process it at all). Therefore we disable linting for the main
+  # scss file (css/all.scss) with the intention of keeping it to a minimal
+  # (ideally it should be kept as front matter + a single import permanently).
+  - 'css/all.scss'
+  - '_sass/_syntax-highlighting.scss'
+
+linters:
+  Indentation:
+    enabled: false
+
+  SpaceAfterComma:
+    enabled: false
+
+  # rule wants s/0.4/.4/
+  LeadingZero:
+    enabled: false
+
+  # rule wants uppercase
+  HexNotation:
+    enabled: false
+
+  # rule wants single quotes
+  StringQuotes:
+    enabled: false
+
+  # rule wants color literals in variable definitions only
+  ColorVariable:
+    enabled: false
+
+  # rule wants no duplicate selectors and forces nesting
+  MergeableSelector:
+    force_nesting: false
+
+  # rule wants //-style comments instead of /*blah*/
+  Comment:
+    enabled: false
+
+  # rule wants "0" instead of "0px"
+  ZeroUnit:
+    enabled: false
+
+  # rule wants "h1,\nh2 {" instead of "h1, h2 {"
+  SingleLinePerSelector:
+    enabled: false
+
+  # rule wants exactly once space after property names
+  SpaceAfterPropertyColon:
+    style: at_least_one_space
