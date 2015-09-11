@@ -3,15 +3,13 @@
  */
 .site-header {
     border-top: 5px solid $grey-color-dark;
-    min-height: 56px;
-
-    // Positioning context for the mobile navigation icon
-    position: relative;
 }
 
 .site-header .wrapper {
   border-bottom: 1px solid #121212;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+  padding-bottom: 8px;
+  padding-top: 18px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700);
@@ -19,9 +17,9 @@
 .site-title {
     float: left;
     font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 26px;
+    font-size: 25px;
     letter-spacing: -1px;
-    line-height: 56px;
+    line-height: 1;
     margin-bottom: 0;
 
     &,
@@ -32,7 +30,6 @@
 
 .site-nav {
     float: right;
-    line-height: 56px;
 
     .menu-icon {
         display: none;
@@ -60,10 +57,17 @@
 }
 
 .searchform {
-    float: left;
-    line-height: 56px;
-    margin-left: 200px;
+    float: right;
     position: relative;
+
+    // On really narrow screens we can't fit title + search + menu button
+    // so the searchbox is pushed down to the next line and in this case
+    // we put some margin-top on it and force "clear both".
+    @media (max-width: 550px) {
+        clear: both;
+        margin-top: 8px;
+    }
+
 }
 
 .searchform input {
@@ -98,6 +102,99 @@ $placeholder-color: #757575;
     left: 6px;
     position: absolute;
     top: 0px;
+}
+
+$button-height: 25px;
+
+.dropdown .button {
+    background-color: #4D91BD;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.62);
+    color: #fff;
+    display: inline-block;
+    font-family: "PT Sans", sans-serif;
+    font-size: 12px;
+    height: $button-height;
+    letter-spacing: 2px;
+    line-height: $button-height;
+    padding-left: 50px;
+    padding-right: 25px;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+    top: -1px;
+
+    // scss-lint:disable VendorPrefix PropertySortOrder
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    // scss-lint:enable VendorPrefix PropertySortOrder
+}
+
+.dropdown .button:visited {
+    color: #fff;
+}
+
+.dropdown .button span {
+    background-color: #527796;
+    border-bottom-left-radius: 5px;
+    border-right: 1px solid  rgba(0,0,0,0.15);
+    border-top-left-radius: 5px;
+    color: #fff;
+    font-family: "FontAwesome";
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 27px;
+}
+
+.dropdown .button:hover span, .dropdown .button:active span {
+    background-color: #3C5971;
+    border-right: 1px solid  rgba(0,0,0,0.3);
+}
+
+.dropdown .button:active {
+    margin-top: 2px;
+}
+
+.dropdown {
+    float: right;
+    height: $button-height;
+    margin-left: 25px;
+    position: relative;
+}
+
+.menuitem-container {
+    background: #000;
+    border: 1px solid #333;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.62);
+    display: none;
+    margin-left: 3px;
+    position: absolute;
+    width: 94%;
+    z-index: 1;
+}
+
+.menuitem-container a {
+    background: linear-gradient(#373A3D 10%, #3E4142 90%);
+    color: #fff;
+    display: block;
+    font-family: "PT Sans", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+
+    // Gaps between nav items, but not on the first one
+    &:not(:first-child) {
+        border-top: 1px solid #292929;
+    }
+}
+
+.menuitem-container a:hover {
+    background: linear-gradient(#292B2E 10%, #2F3233 90%);
+    text-decoration: none;
 }
 
 
