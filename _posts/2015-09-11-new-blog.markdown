@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "Welcome to my blog"
+date:   2015-09-11
+tags: web
+---
+I've decided to create a new blog. I plan to write about software development, my side projects and tools etc. This first post will be a short description of how I created the blog. I used the [Jekyll](https://jekyllrb.com/) static site generator as a skeleton and then I customized a few bits and pieces, like:
+
+* Added a tags page that lists all posts grouped by tag
+* Added little tag labels at the bottom of each post
+* Added an archive page that lists all posts grouped by year
+* Cleaned up the boilerplate CSS that `jekyll new .` created, dropping some vendor prefixes and fixing some issues so that it passes `scss-lint` and made it look better on mobile
+* Added a minimal searchbox that just googles for `site:whatever blah`
+* Switched to the `redcarpet` markdown renderer so I can use triple backticks for syntax highlighted code (this is nice because my editor will then automatically do proper syntax highlighting for such blocks even as I edit the markdown)
+
+All of the above was done without using any Jekyll plugins so I that I can host the blog on [GitHub Pages](https://pages.github.com/) and let the git push hook do the site generation for me. This also makes theoretically possible to publish new posts by committing directly in the GitHub web interface (i.e. the little "plus" icon on GitHub that says "Create a new file here").
+
+Finally, I also added a `gulpfile.js` that watches all source files and triggers a Jekyll build when something changes, and then it also reloads the browser automatically using `browser-sync`:
+
+```javascript
+var gulp        = require('gulp');
+var browserSync = require('browser-sync');
+var cp          = require('child_process');
+
+gulp.task('jekyll-build', function (done) {
+    browserSync.notify("Running jekyll build");
+    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+gulp.task('jekyll-build-reload', ['jekyll-build'], function () {
+    browserSync.reload();
+});
+
+gulp.task('browser-sync', ['jekyll-build-reload'], function() {
+    browserSync({
+        server: {
+            baseDir: '_site'
+        }
+    });
+});
+
+gulp.task('watch', function () {
+    gulp.watch(['**/*', '!_site/**/*'], ['jekyll-build-reload']);
+});
+
+gulp.task('default', ['browser-sync', 'watch']);
+```
+
+The source code for this blog is available at: [github.com/mo/mo.github.io](http://github.com/mo/mo.github.io)
