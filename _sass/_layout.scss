@@ -243,6 +243,7 @@ $button-height: 25px;
 }
 
 .footer-col-3 {
+    text-align: right;
     width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
