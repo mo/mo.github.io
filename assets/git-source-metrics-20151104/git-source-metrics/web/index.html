@@ -1,0 +1,227 @@
+<!doctype>
+<link type="text/css" rel="stylesheet" href="thirdparty/rickshaw.css">
+<script src="thirdparty/d3.v3.js"></script>
+<script src="thirdparty/d3.layout.min.js"></script>
+<script src="thirdparty/rickshaw.js"></script>
+<link rel="stylesheet" href="thirdparty/jquery-ui/jquery-ui-1.11.2/jquery-ui.min.css">
+<script src="thirdparty/jquery-ui/jquery-ui-1.11.2/external/jquery/jquery.js"></script>
+<script src="thirdparty/jquery-ui/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+
+<script src="utilities.js"></script>
+<script src="../../all_chart_data.js"></script>
+
+<style>
+#chart_container {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 1210px;
+}
+#chart {
+    display: inline-block;
+    margin-left: 100px;
+}
+#y_axis {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+}
+#x_axis {
+    margin-left: 100px;
+}
+#range_slider {
+    margin-left: 100px;
+    height: 0.4em;
+}
+#range_slider .ui-slider-handle {
+    height: 0.8em;
+    width: 0.8em;
+}
+#annotation_timeline {
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+#legend {
+    min-width: 290px;
+}
+#chart_select {
+    width: 1100px;
+    margin-left: 100px;
+}
+#rightColumn {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 10px;
+}
+#optionsPanel {
+    padding: 0px 10px;
+}
+#optionsPanel input {
+    float: left;
+}
+#optionsPanel label {
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    margin-top: 1px;
+}
+#optionsPanel label + input {
+    clear: left;
+}
+#legendHelpArrow {
+    font-size: 19pt;
+    color: gray;
+}
+#legendHelpText {
+    width: 280px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8pt;
+}
+#legendHelpText span {
+    vertical-align: middle;
+}
+#scalingButtonsContainer {
+    margin-top: 20px;
+}
+</style>
+
+<select id="chart_select" onchange="javascript:window.location='?chart='+this.value">
+</select>
+<br><br>
+
+<div id="chart_container">
+        <div id="y_axis"></div>
+        <div id="chart"></div>
+        <div id="x_axis"></div>
+        <div id="annotation_timeline"></div>
+        <div id="range_slider"></div>
+</div>
+<div id="rightColumn">
+    <div id="legend"></div>
+    <div id="optionsPanel">
+        <div id="legendHelpText">
+            <span id="legendHelpArrow">&#x2B11;</span> <span>too much clutter? uncheck to temporarily hide metrics</span>
+        </div>
+        <div id="scalingButtonsContainer">
+            <input type="radio" name="y-axis-scaling" id="btnRescale" />
+            <label for="btnRescale">Rescale Y-axis to currently visible data</label>
+
+            <input type="radio" name="y-axis-scaling" id="btnFixed" checked="checked" />
+            <label for="btnFixed">Fixed Y-axis range</label>
+        </div>
+    </div>
+</div>
+
+<script>
+var params = get_url_params();
+if (!(params["chart"] in all_chart_data) && Object.keys(all_chart_data).length > 0) {
+    params["chart"] = Object.keys(all_chart_data)[0];
+}
+
+var chart_keys_sorted_by_title = Object.keys(all_chart_data).sort(function(key1, key2) {
+    var title1 = all_chart_data[key1]["chart_title"];
+    var title2 = all_chart_data[key2]["chart_title"];
+    return title1.localeCompare(title2);
+});
+
+for (var idx = 0; idx < chart_keys_sorted_by_title.length; idx++) {
+    key = chart_keys_sorted_by_title[idx];
+    var option = document.createElement("option");
+    option.innerHTML = all_chart_data[key]["chart_title"];
+    option.value = key;
+    document.getElementById("chart_select").appendChild(option);
+}
+document.getElementById('chart_select').value = params["chart"]
+document.getElementById('chart_select').focus()
+
+var allSeries = all_chart_data[params["chart"]]["chart_series"];
+var allSeriesYMin = d3.min(allSeries, serie => d3.min(serie.data, datapoint => datapoint.y));
+var allSeriesYMax = d3.max(allSeries, serie => d3.max(serie.data, datapoint => datapoint.y));
+
+var graph = new Rickshaw.Graph( {
+        element: document.querySelector("#chart"),
+        width: 1100,
+        height: 500,
+        interpolation: "linear",
+        stack: false,
+        series: allSeries,
+        min: allSeriesYMin,
+        max: allSeriesYMax*1.1,
+} );
+graph.setRenderer('line');
+graph.render();
+
+$("#btnFixed").click(function (e) {
+    graph.configure({
+        min: allSeriesYMin,
+        max: allSeriesYMax*1.1,
+    });
+    graph.render();
+});
+
+
+$("#btnRescale").click(function (e) {
+    graph.configure({
+        min: undefined,
+        max: undefined,
+    });
+    graph.render();
+});
+
+function timestampToDateString(x) {
+    return (new Date(x*1000)).toISOString().substring(0, 10)
+}
+
+var x_axis = new Rickshaw.Graph.Axis.X( {
+    graph: graph,
+    tickFormat: timestampToDateString,
+    orientation: "bottom",
+    element: document.getElementById('x_axis'),
+} );
+x_axis.render();
+
+var y_axis = new Rickshaw.Graph.Axis.Y( {
+        graph: graph,
+        orientation: 'left',
+        element: document.getElementById('y_axis'),
+} );
+y_axis.render();
+
+var legend = new Rickshaw.Graph.Legend( {
+        element: document.querySelector('#legend'),
+        graph: graph
+} );
+
+var shelving = new Rickshaw.Graph.Behavior.Series.Toggle({
+    graph: graph,
+    legend: legend
+});
+
+var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+    graph: graph,
+    xFormatter: function(x) {
+        var commit_date = timestampToDateString(x)
+        var sha1 = timestamp_to_sha1[x]
+        return commit_date + " (" + sha1 + ")"
+    },
+    yFormatter: function(y) { return y }
+} );
+
+var slider = new Rickshaw.Graph.RangeSlider({
+    graph: graph,
+    element: document.querySelector('#range_slider')
+});
+
+var annotator = new Rickshaw.Graph.Annotate({
+    graph: graph,
+    element: document.querySelector('#annotation_timeline')
+});
+
+var annotations = all_chart_data[params["chart"]]["chart_annotations"]
+for (timestamp in annotations) {
+    annotator.add(timestamp, timestampToDateString(timestamp) + ": " + annotations[timestamp]);
+}
+annotator.update();
+
+</script>
