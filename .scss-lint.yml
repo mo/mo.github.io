@@ -5,7 +5,7 @@ exclude:
   # scss file (css/all.scss) with the intention of keeping it to a minimal
   # (ideally it should be kept as front matter + a single import permanently).
   - 'assets-layout/all.scss'
-  - '_sass/syntax-highlighting-solarized-dark.scss'
+  - '_sass/syntax-highlighting.scss'
 
 linters:
   Indentation:
