@@ -371,7 +371,7 @@ def calcIndexFromRowAndColumn(row: Long, column: Long): Long = {
 }
 
 def calcCodeForRowAndColumn(row: Long, column: Long): Long = {
-  20151125*BigInt(252533).modPow(
+  20151125 * BigInt(252533).modPow(
     calcIndexFromRowAndColumn(row, column) - 1,
     33554393).toLong % 33554393
 }
