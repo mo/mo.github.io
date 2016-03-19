@@ -13,7 +13,4 @@ exclude:
   - 'gulpfile.js'
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: ["smart", "tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks", "footnotes"]
-  highlighter: pygments
+markdown: kramdown
