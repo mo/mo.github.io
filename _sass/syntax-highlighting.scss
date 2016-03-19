@@ -12,19 +12,20 @@
   color: #93a1a1
 }
 .highlight pre, pre, .highlight .hll { border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
-.highlight .c { color: #999988; font-style: italic; }
+.highlight .c1,
+.highlight .c { color: #999973; font-style: italic; }
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
+.highlight .p { color: #A8B8B8; }
 .highlight .k,
 .highlight .kc,
 .highlight .kd,
 .highlight .kn,
 .highlight .kp,
 .highlight .kr { font-weight: bold; color: #A8B8B8; }
-.highlight .kt { color: #6F4280; font-weight: bold; }
-.highlight .o { font-weight: bold; }
+.highlight .kt { color: #745380; font-weight: bold; }
+.highlight .o { color: #97A6A6; font-weight: bold; }
 .highlight .cm { color: #999988; font-style: italic; }
 .highlight .cp { color: #999999; font-weight: bold; }
-.highlight .c1 { color: #999988; font-style: italic; }
 .highlight .cs { color: #999999; font-weight: bold; font-style: italic; }
 .highlight .gd { color: #000000; background-color: #ffdddd; }
 .highlight .gd .x { color: #000000; background-color: #ffaaaa; }
@@ -41,15 +42,15 @@
 .highlight .m { color: #009999; }
 .highlight .s,
 .highlight .s1,
-.highlight .s2 { color: #559E57; }
+.highlight .s2 { color: #639965; }
 .highlight .n { color: #949494; }
 .highlight .na { color: teal; }
-.highlight .nb { color: #0086b3; }
-.highlight .nc { color: #445588; font-weight: bold; }
+.highlight .nb { color: #949494; }
+.highlight .nc { color: #949494; font-weight: bold; }
 .highlight .no { color: teal; }
 .highlight .ni { color: purple; }
 .highlight .ne { color: #990000; font-weight: bold; }
-.highlight .nf { color: #990000; font-weight: bold; }
+.highlight .nf { color: #949494; font-weight: bold; }
 .highlight .nn { color: #555555; }
 .highlight .nt { color: navy; }
 .highlight .nv { color: teal; }
@@ -64,7 +65,7 @@
 .highlight .sd { color: #C24D6B; }
 .highlight .se { color: #C24D6B; }
 .highlight .sh { color: #C24D6B; }
-.highlight .si { color: #C24D6B; }
+.highlight .si { color: #5A5C8C; font-weight: bold; }
 .highlight .sx { color: #C24D6B; }
 .highlight .sr { color: #009926; }
 .highlight .ss { color: #990073; }
