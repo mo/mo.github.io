@@ -1,0 +1,17 @@
+<div class="image-wrapper" >
+    {% if include.width %}
+    <script>
+    document.currentScript.parentElement.style.width = "{{ include.width }}";
+    </script>
+    {% endif %}
+    {% if include.url %}
+    <a href="{{ include.url }}">
+    {% endif %}
+        <img src="{{ include.img }}" />
+    {% if include.url %}
+    </a>
+    {% endif %}
+    {% if include.caption %}
+        <p class="image-caption">{{ include.caption }}</p>
+    {% endif %}
+</div>

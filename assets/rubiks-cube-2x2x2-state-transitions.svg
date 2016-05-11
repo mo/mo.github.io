@@ -1,0 +1,80 @@
+<svg width="367pt" height="260pt" viewBox="0.00 0.00 367.00 260.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>G</title>
+<!-- State 3: Arrow -->
+<g id="node1" class="node"><title>State 3: Arrow</title>
+<polygon fill="none" stroke="none" points="92.0114,-252 -0.0114006,-252 -0.0114006,-216 92.0114,-216 92.0114,-252"></polygon>
+<text text-anchor="middle" x="46" y="-230.4" font-family="Arial" font-size="12.00" fill="white">State 3: Arrow</text>
+</g>
+<!-- State 4: Tank -->
+<g id="node3" class="node"><title>State 4: Tank</title>
+<polygon fill="none" stroke="none" points="89.5205,-180 2.47946,-180 2.47946,-144 89.5205,-144 89.5205,-180"></polygon>
+<text text-anchor="middle" x="46" y="-158.4" font-family="Arial" font-size="12.00" fill="white">State 4: Tank</text>
+</g>
+<!-- State 3: Arrow&#45;&gt;State 4: Tank -->
+<g id="edge2" class="edge"><title>State 3: Arrow-&gt;State 4: Tank</title>
+<path fill="none" stroke="white" d="M46,-215.697C46,-207.983 46,-198.712 46,-190.112"></path>
+<polygon fill="white" stroke="white" points="49.5001,-190.104 46,-180.104 42.5001,-190.104 49.5001,-190.104"></polygon>
+</g>
+<!-- State 7: CCW Thrusters -->
+<g id="node5" class="node"><title>State 7: CCW Thrusters</title>
+<polygon fill="none" stroke="none" points="228.508,-108 85.4924,-108 85.4924,-72 228.508,-72 228.508,-108"></polygon>
+<text text-anchor="middle" x="157" y="-86.4" font-family="Arial" font-size="12.00" fill="white">State 7: CCW Thrusters</text>
+</g>
+<!-- State 4: Tank&#45;&gt;State 7: CCW Thrusters -->
+<g id="edge4" class="edge"><title>State 4: Tank-&gt;State 7: CCW Thrusters</title>
+<path fill="none" stroke="white" d="M73.1537,-143.876C87.5325,-134.808 105.381,-123.552 120.91,-113.759"></path>
+<polygon fill="white" stroke="white" points="123.15,-116.484 129.742,-108.19 119.416,-110.564 123.15,-116.484"></polygon>
+</g>
+<!-- State 8: Solved -->
+<g id="node7" class="node"><title>State 8: Solved</title>
+<polygon fill="none" stroke="none" points="205.525,-36 108.475,-36 108.475,0 205.525,0 205.525,-36"></polygon>
+<text text-anchor="middle" x="157" y="-14.4" font-family="Arial" font-size="12.00" fill="white">State 8: Solved</text>
+</g>
+<!-- State 7: CCW Thrusters&#45;&gt;State 8: Solved -->
+<g id="edge6" class="edge"><title>State 7: CCW Thrusters-&gt;State 8: Solved</title>
+<path fill="none" stroke="white" d="M157,-71.6966C157,-63.9827 157,-54.7125 157,-46.1124"></path>
+<polygon fill="white" stroke="white" points="160.5,-46.1043 157,-36.1043 153.5,-46.1044 160.5,-46.1043"></polygon>
+</g>
+<!-- State 1: Duck -->
+<g id="node8" class="node"><title>State 1: Duck</title>
+<polygon fill="none" stroke="none" points="201.017,-252 112.983,-252 112.983,-216 201.017,-216 201.017,-252"></polygon>
+<text text-anchor="middle" x="157" y="-230.4" font-family="Arial" font-size="12.00" fill="white">State 1: Duck</text>
+</g>
+<!-- State 5: Tractor -->
+<g id="node10" class="node"><title>State 5: Tractor</title>
+<polygon fill="none" stroke="none" points="206.016,-180 107.984,-180 107.984,-144 206.016,-144 206.016,-180"></polygon>
+<text text-anchor="middle" x="157" y="-158.4" font-family="Arial" font-size="12.00" fill="white">State 5: Tractor</text>
+</g>
+<!-- State 1: Duck&#45;&gt;State 5: Tractor -->
+<g id="edge8" class="edge"><title>State 1: Duck-&gt;State 5: Tractor</title>
+<path fill="none" stroke="white" d="M157,-215.697C157,-207.983 157,-198.712 157,-190.112"></path>
+<polygon fill="white" stroke="white" points="160.5,-190.104 157,-180.104 153.5,-190.104 160.5,-190.104"></polygon>
+</g>
+<!-- State 5: Tractor&#45;&gt;State 7: CCW Thrusters -->
+<g id="edge10" class="edge"><title>State 5: Tractor-&gt;State 7: CCW Thrusters</title>
+<path fill="none" stroke="white" d="M157,-143.697C157,-135.983 157,-126.712 157,-118.112"></path>
+<polygon fill="white" stroke="white" points="160.5,-118.104 157,-108.104 153.5,-118.104 160.5,-118.104"></polygon>
+</g>
+<!-- State 2: Headlights -->
+<g id="node12" class="node"><title>State 2: Headlights</title>
+<polygon fill="none" stroke="none" points="350.524,-252 233.476,-252 233.476,-216 350.524,-216 350.524,-252"></polygon>
+<text text-anchor="middle" x="292" y="-230.4" font-family="Arial" font-size="12.00" fill="white">State 2: Headlights</text>
+</g>
+<!-- State 6: CW Thrusters -->
+<g id="node14" class="node"><title>State 6: CW Thrusters</title>
+<polygon fill="none" stroke="none" points="359.012,-180 224.988,-180 224.988,-144 359.012,-144 359.012,-180"></polygon>
+<text text-anchor="middle" x="292" y="-158.4" font-family="Arial" font-size="12.00" fill="white">State 6: CW Thrusters</text>
+</g>
+<!-- State 2: Headlights&#45;&gt;State 6: CW Thrusters -->
+<g id="edge12" class="edge"><title>State 2: Headlights-&gt;State 6: CW Thrusters</title>
+<path fill="none" stroke="white" d="M292,-215.697C292,-207.983 292,-198.712 292,-190.112"></path>
+<polygon fill="white" stroke="white" points="295.5,-190.104 292,-180.104 288.5,-190.104 295.5,-190.104"></polygon>
+</g>
+<!-- State 6: CW Thrusters&#45;&gt;State 7: CCW Thrusters -->
+<g id="edge14" class="edge"><title>State 6: CW Thrusters-&gt;State 7: CCW Thrusters</title>
+<path fill="none" stroke="white" d="M258.975,-143.876C240.915,-134.512 218.355,-122.814 199.049,-112.803"></path>
+<polygon fill="white" stroke="white" points="200.64,-109.686 190.152,-108.19 197.418,-115.9 200.64,-109.686"></polygon>
+</g>
+</g>
+</svg>
