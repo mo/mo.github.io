@@ -39,3 +39,9 @@ for); it even has a few
 [tests](https://github.com/mo/wait-for/blob/master/tests/run-tests). The
 tests were written in bash because that was obviously a good idea (my
 condolences to the kittens that died as a result).
+
+<br>
+
+**EDIT**: After posting this, someone pointed out the fact that
+```watch --chgexit cmd``` covers the above use case, so wait-for is only useful
+if you actually need ```--stdout-contains``` or ```--stdout-equals``` etc.
