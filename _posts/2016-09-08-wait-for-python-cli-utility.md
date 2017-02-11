@@ -29,7 +29,7 @@ $ CHANGELOG="https://www.openssl.org/news/changelog.txt"
 $ wait-for --stdout-change "curl -s $CHANGELOG" ; notify-send "It's published"
 
 $ # Suppose you have a scruffy old Jenkins server, and you want to wait for the
-$ # next successful build and then deploy that to some a staging environment.
+$ # next successful build and then deploy that to some staging environment.
 $ URL="http://jenkins.ecorp.com/job/SOME_JOB_NAME/lastSuccessfulBuild/api/json"
 $ wait-for --stdout-change "curl -s $URL | jq .number" ; deploy-latest-successful
 ```
