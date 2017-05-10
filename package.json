@@ -1,0 +1,12 @@
+{
+  "name": "mo.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  }
+}
