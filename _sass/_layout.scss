@@ -198,6 +198,35 @@ $button-height: 25px;
 }
 
 
+table {
+  border: 1px solid #202020;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+table th {
+}
+table th {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #272727;
+}
+table td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+td {
+  padding: 5px;
+}
+tr:nth-child(odd) td {
+    background-color: #424242;
+}
+tr:nth-child(even) td {
+  background-color: #383838;
+}
+
 /**
  * Site footer
  */
