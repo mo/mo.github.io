@@ -280,7 +280,7 @@ this is not all "one-off drive-by patching" either.
 
 I was surprised that I hit so many little bugs / issues when trying to use these testing frameworks.
 Maybe the best choice is to do like TJ and switch to Go? :-P Staying with Javascript, I think
-it's hard to ignore the momentum behind Jest. I would be awesome if someone fixed [#2059](https://github.com/facebook/jest/issues/2059) though. Then again, Mocha seems to work well
+it's hard to ignore the momentum behind Jest. It would be awesome if someone fixed [#2059](https://github.com/facebook/jest/issues/2059) though. Then again, Mocha seems to work well
 enough for a lot of people.
 
 <br><br>
