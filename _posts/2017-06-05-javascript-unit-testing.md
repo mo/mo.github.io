@@ -174,10 +174,11 @@ Here is how tape handles the accidental double callback bug scenario btw:
 Note that tape, unlike Mocha, prints the number of assert passes/fails in the summary so everything
 is technically correct here in some sense.
 
-*Update 2017-07-11: As mentioned by Stefan Alexander Meng in the comments below; there is also a
+*Update 2017-07-12: As mentioned by Stefan Maric in the comments below; there is also a
 test framework called [node-tap](http://www.node-tap.org/) which is similar to tape in a lot of
-ways but with a few key issues fixed. If you like tape you should also have a look at node-tap
-before you decide which framework to use.*
+ways but with a few key issues fixed. Even though node-tap has fewer NPM downloads, npm uses
+node-tap for testing. If you like tape you should also have a look at node-tap before you decide
+which framework to use.*
 
 # AVA
 
