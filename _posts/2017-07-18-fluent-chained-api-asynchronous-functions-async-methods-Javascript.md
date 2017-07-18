@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Chained APIs for asynchronous functions in Javascript"
+title:  "Chained APIs with asynchronous functions in Javascript"
 date:   2017-07-18
 tags:   javascript web
 ---
