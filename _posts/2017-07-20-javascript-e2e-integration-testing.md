@@ -621,6 +621,8 @@ If you have to pick a single test E2E framework today, I recommend [webdriver.io
 
 # Epilogue
 
+Did you like this post? [Tweet about it](http://twitter.com/home?status=Comprehensive%20review%20of%20Javascript%20tools%20for%20end-to-end%20testing%20web%20applications%20https%3A%2F%2Fgit.io%2Fv7v8E%20by%20%40mo_molsson) or post it on whatever other network / thing you're on.
+
 Did I miss some important feature / aspect of some framework? Did I miss an entire framework? Tweet
 at [@mo_molsson](http://twitter.com/home?status=@mo_molsson) or drop a comment below. Thanks for
 reading!
