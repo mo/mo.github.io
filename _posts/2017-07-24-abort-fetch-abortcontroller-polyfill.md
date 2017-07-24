@@ -45,7 +45,9 @@ componentDidMount() {
     if (err.name == 'AbortError') {
       return;
     }
-    // handle errors (connection refused etc)
+    // It's important to rethrow all other errors so you don't silence them!
+    // For example, any error thrown by setState(), will pass through here.
+    throw err;
   });
 }
 
