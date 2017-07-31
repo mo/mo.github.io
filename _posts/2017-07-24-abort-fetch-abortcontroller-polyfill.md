@@ -86,4 +86,6 @@ to the DOM specification. The corresponding <a href="https://github.com/whatwg/f
 for the fetch specification</a> is essentially done but not technically merged yet, waiting for
 testcases to be merged into web-platform-tests via <a
 href="https://github.com/w3c/web-platform-tests/pull/6484">PR #6484</a>. The Firefox bug for
-implementing this is <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1378342">#1378342</a>.</p>
+implementing this is <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1378342">#1378342</a> and
+the Chromium bug is <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=750599">#750599
+</a>.</p>
