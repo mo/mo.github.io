@@ -85,7 +85,6 @@ href="https://dom.spec.whatwg.org/#aborting-ongoing-activities">AbortController<
 to the DOM specification. The corresponding <a href="https://github.com/whatwg/fetch/pull/523">PR
 for the fetch specification</a> is essentially done but not technically merged yet, waiting for
 testcases to be merged into web-platform-tests via <a
-href="https://github.com/w3c/web-platform-tests/pull/6484">PR #6484</a>. The Firefox bug for
-implementing this is <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1378342">#1378342</a> and
-the Chromium bug is <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=750599">#750599
-</a>.</p>
+href="https://github.com/w3c/web-platform-tests/pull/6484">PR #6484</a>. Browser bugs tracking the implementation of AbortController is available here: Firefox: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1378342">#1378342</a>, Chromium: <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=750599">#750599</a>, WebKit: <a href="https://bugs.webkit.org/show_bug.cgi?id=174980">#174980</a>, Edge: <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13009916/">#13009916</a>.
+
+</p>
