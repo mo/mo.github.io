@@ -1,7 +1,7 @@
 .highlight code, .highlight pre {
   background: transparent;
   border-radius: 2px;
-  overflow-x: auto;
+  overflow: hidden;
   border: 0px;
   margin: 0px;
 }
@@ -11,7 +11,7 @@
   border-radius: 3px;
   color: #93a1a1
 }
-.highlight pre, pre, .highlight .hll { border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
+.highlight pre, pre, .highlight .hll { padding: 6px 10px; border-radius: 3px; }
 .highlight .c1,
 .highlight .c { color: #999973; font-style: italic; }
 .highlight .err { color: #999973; }
