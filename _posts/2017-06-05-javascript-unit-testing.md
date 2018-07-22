@@ -236,8 +236,8 @@ that below).
 Jest is the test framework and test runner that is used by the React project and consequently by
 many libraries, tools and web apps implemented using React. The fact that it's used by and backed by
 Facebook lends it both credibility and likely resources. Among the top 10 contributors to Jest,
-everyone except two works at Facebook. It seems like a large part of the work is done by Chris Pojer
-tbh.
+everyone except two works at Facebook<sup>[2](#footnote2)</sup>. It seems like a large part of the
+work is done by Chris Pojer tbh.
 
 Jest started as a test runner wrapped around Jasmine, and the assertions still looks
 like ```expect(foo).toBe('bar')```, but now there are few traces of Jasmine left. Jest doesn't have
