@@ -8,20 +8,23 @@ gulp.task('jekyll-build', function (done) {
         .on('close', done);
 });
 
-gulp.task('jekyll-build-reload', ['jekyll-build'], function () {
+gulp.task('jekyll-build-reload', gulp.series('jekyll-build', function (done) {
     browserSync.reload();
-});
+    done();
+}));
 
-gulp.task('browser-sync', ['jekyll-build-reload'], function() {
+gulp.task('browser-sync', gulp.series('jekyll-build-reload', function(done) {
     browserSync({
         server: {
             baseDir: '_site'
         }
     });
+    done();
+}));
+
+gulp.task('watch', function (done) {
+    gulp.watch(['**/*', '!_site/**/*'], gulp.series('jekyll-build-reload'));
+    done();
 });
 
-gulp.task('watch', function () {
-    gulp.watch(['**/*', '!_site/**/*'], ['jekyll-build-reload']);
-});
-
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', gulp.series('browser-sync', 'watch'));
