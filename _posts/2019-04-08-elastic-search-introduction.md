@@ -294,13 +294,20 @@ same git repository (and ES uses Lucene). Also, note that the first commit in
 the Vespa repository is a 2.5 MLOC behemoth diff that represents the squashed
 history up to that point (i.e. this codebase is literally _decades_ old).
 
-<img src="/assets/elasticsearch-open-source-competitors-2.png">
+<img src="/assets/elasticsearch-open-source-competitors.png">
 
 I also plotted the number of commits pushed to each project per 180 day window
 (this says nothing about the quality or size of the commits ofc). It shows that
 Vespa has a higher commit rate than ES right now:
 
-<img src="/assets/elasticsearch-open-source-commit-rates-2.png">
+<img src="/assets/elasticsearch-open-source-commit-rates.png">
+
+This final plot shows the number of git authors with 5 or more commits per 90
+days (I use this as a proxy metric for counting the number of "full time
+developers" working on a project). For example, the Xapiand project have
+essentially 3 developers working on it:
+
+<img src="/assets/elasticsearch-open-source-author-counts.png">
 
 # How Elasticsearch is licensed
 
