@@ -280,7 +280,8 @@ had in turn acquired it when it bought parts of the Norwegian company FAST
 origin in the old "FTP Search" website operated by Tor Egge at NTNU. Finally,
 there is also [manticore
 search](https://github.com/manticoresoftware/manticoresearch), which is an open
-source project founded by some of the core members from Sphinx.
+source project founded by some of the core members from Sphinx (and it started
+as a fork of Sphinx).
 
 To visualize the size of these projects, here is the number git commits over
 time (compared to ES). One thing to note is that Lucene and Solr lives in the
