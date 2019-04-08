@@ -263,8 +263,9 @@ rust, uses tantivy). Two other ones are the search library
 [bleve](https://github.com/blevesearch/bleve) (implemented in golang, named
 after
 [this](https://en.wikipedia.org/wiki/Boiling_liquid_expanding_vapor_explosion))
-and [blast](https://github.com/mosuka/blast) which is a server using bleve.
-Another nice full text solution (in rust) is
+and [blast](https://github.com/mosuka/blast) which is a server using Bleve. Also
+note that the full-text search in Couchbase is powered by Bleve. Another nice
+full text solution (in rust) is
 [Sonic](https://github.com/valeriansaliou/sonic). A few people have tried to
 implement [Lucene index-compatible search
 libraries](https://wiki.apache.org/lucene-java/LuceneImplementations) in
