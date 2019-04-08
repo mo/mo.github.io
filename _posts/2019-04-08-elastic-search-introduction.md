@@ -259,10 +259,12 @@ be compared to Elasticsearch, for example
 [tantivy](https://github.com/tantivy-search/tantivy) (search library similar to
 Lucene, but implemented in rust) and
 [Toshi](https://github.com/toshi-search/Toshi) (search engine implemented in
-rust, uses tantivy). Two other ones are
+rust, uses tantivy). Two other ones are the search library
 [bleve](https://github.com/blevesearch/bleve) (implemented in golang) and
-[Sonic](https://github.com/valeriansaliou/sonic) (implemented in rust). A few
-people have tried to implement [Lucene index-compatible search
+[blast](https://github.com/mosuka/blast) which is a server using bleve. Another
+nice full text solution (in rust) is
+[Sonic](https://github.com/valeriansaliou/sonic). A few people have tried to
+implement [Lucene index-compatible search
 libraries](https://wiki.apache.org/lucene-java/LuceneImplementations) in
 non-Java languages but none of them took off.
 
