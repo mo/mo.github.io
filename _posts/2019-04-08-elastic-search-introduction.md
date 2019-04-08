@@ -269,7 +269,8 @@ Another nice full text solution (in rust) is
 implement [Lucene index-compatible search
 libraries](https://wiki.apache.org/lucene-java/LuceneImplementations) in
 non-Java languages but none of them took off. [Xapian](https://xapian.org) is a
-fairly mature search engine library (more like Lucene, rather than ES).
+fairly mature search engine library (like Lucene) and
+[Xapiand](https://kronuz.io/Xapiand/) is a server built around it.
 
 Another (larger) open source project that should be mentioned is
 [Vespa](https://vespa.ai), which was [open sourced by
