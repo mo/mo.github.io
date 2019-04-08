@@ -295,7 +295,7 @@ I also plotted the number of commits pushed to each project per 180 day window
 (this says nothing about the quality or size of the commits ofc). It shows that
 Vespa has a higher commit rate than ES right now:
 
-<img src="/assets/elasticsearch-open-source-competitors-2.png">
+<img src="/assets/elasticsearch-open-source-commit-rates-2.png">
 
 # How Elasticsearch is licensed
 
