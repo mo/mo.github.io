@@ -277,7 +277,10 @@ Vespa was not used for the main Yahoo search engine but rather it was powering
 the alltheweb.com search engine that Yahoo acquired in 2003 from Overture which
 had in turn acquired it when it bought parts of the Norwegian company FAST
 (other parts of this company was acquired by Microsoft). FAST itself had its
-origin in the old "FTP Search" website operated by Tor Egge at NTNU.
+origin in the old "FTP Search" website operated by Tor Egge at NTNU. Finally,
+there is also [manticore
+search](https://github.com/manticoresoftware/manticoresearch), which is an open
+source project founded by some of the core members from Sphinx.
 
 To visualize the size of these projects, here is the number git commits over
 time (compared to ES). One thing to note is that Lucene and Solr lives in the
