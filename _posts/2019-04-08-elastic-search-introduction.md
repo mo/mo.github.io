@@ -119,7 +119,7 @@ instead:
 
 In the end, this makes it possible to find this data in Kibana (or
 programmatically via ES) using a query like ```severity:INFO AND
-message:connected```.
+message:connecting```.
 
 Before FileBeat existed a lot of people ran Logstash directly on each node but
 it's written in Ruby + Java so it typically consumes quite a lot of memory
