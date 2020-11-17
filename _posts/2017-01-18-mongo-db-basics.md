@@ -229,6 +229,12 @@ db.staff.aggregate([
    { $sort: { averageAge: -1 }}
 ])
 
+// Compute the average age of all full time employees
+db.staff.aggregate([
+   { $match: { type: "fulltime" }},
+   { $group: { _id: null, averageAge: { $avg: "$age" }}}
+])
+
 // Compute the max and min age for each team
 db.staff.aggregate([{
   $group: {
