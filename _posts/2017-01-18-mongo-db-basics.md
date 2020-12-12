@@ -7,7 +7,7 @@ tags:   backend
 
 # Q: How can I see what databases/collections is available?
 
-Launch the Mongo DB shell by running ```mongo``` (for localhost, or specify some
+Launch the Mongo db shell by running ```mongo``` (for localhost, or specify some
 custom host/port along with ```-u USERNAME -p``` etc). Once inside the shell,
 run:
 
