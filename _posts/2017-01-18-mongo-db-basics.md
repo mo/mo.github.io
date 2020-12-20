@@ -215,6 +215,8 @@ db.staff.insert({ name: "Ben", team: "sales", age: 33, type: "fulltime" });
 db.staff.insert({ name: "Craig", team: "engineering", age: 29, type: "fulltime" });
 db.staff.insert({ name: "David", team: "hr", age: 47, type: "fulltime" });
 db.staff.insert({ name: "Eric", team: "engineering", age: 19, type: "contractor" });
+db.staff.insert({ name: "Ike (intern)", team: "hr", age: 17, type: "contractor" });
+db.staff.insert({ name: "Graham", team: "engineering", age: 68, type: "contractor" });
 
 // Compute the number of non-full time employees in each team
 db.staff.aggregate([
@@ -252,6 +254,25 @@ db.staff.aggregate([{
     maxAge: { $max: "$age" }
   }
 }])
+
+// Split employees into groups based on specific age ranges
+db.staff.aggregate([
+  { $bucket: {
+    groupBy: "$age",
+    boundaries: [0, 18, 25, 65],
+    default: "65_or_older",
+    output: {
+      count: { $sum: 1},
+      teams: { $addToSet: "$team" }
+    }
+  }}
+])
+// This last query would bucket into groups [0, 18), [18, 25), [25, 65) and put
+// all other employees into the default group called "65_or_older", like this:
+// { "_id" : 0, "count" : 1, "teams" : [ "hr" ] }
+// { "_id" : 18, "count" : 1, "teams" : [ "engineering" ] }
+// { "_id" : 25, "count" : 4, "teams" : [ "hr", "engineering", "sales" ] }
+// { "_id" : "65_or_older", "count" : 1, "teams" : [ "engineering" ] }
 ```
 
 # Q: How can I do "group by" / aggregate for date fields?
